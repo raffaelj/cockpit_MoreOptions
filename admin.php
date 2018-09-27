@@ -34,6 +34,24 @@ $app->on('app.collections.controller.admin.init', function() use($app){
     
 });
 
+// change page titles
+$app->on('app.layout.contentbefore', function(){
+    
+    $route = explode('/', substr($this['route'],1));
+    
+    if (isset($route[1]) && $route[1] == 'entry')
+        $route[3] = 'Edit';
+    
+    $title = '';
+    for (end($route); key($route)!==null; prev($route)){
+        $title .= !empty(current($route)) ? ucfirst(current($route)) . ' - ' : '';
+    }
+    
+    $title .= $this['app.name'];
+    echo "<script>document.title = '$title'</script>";
+    
+});
+
 // dashboard widget
 $app->on("admin.dashboard.widgets", function($widgets) {
     
