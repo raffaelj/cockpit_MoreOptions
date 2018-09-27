@@ -33,8 +33,14 @@ $app->on('app.collections.controller.admin.init', function() use($app){
     }
     
 });
-
+/* 
 // change page titles
+// not neccessary anymore, @aheinze added page titles in https://github.com/agentejo/cockpit/commit/047ae6b6256e1eccf5104bec0c627244e84c028a
+// But it could be useful to have custom page titles...
+// * simple, generated from reverse order of route
+// * `/collections/collection/name` --> `Name - Collection - Collections - AppName`
+// * `/singletons/form/name` --> `Name - Form - Singletons - AppName` and so on
+// * one fallback: `/collections/entry/name/5ba6a71733386213b40001e8` --> `Edit - Name - Entry - Collections - AppName`
 $app->on('app.layout.contentbefore', function(){
     
     $route = explode('/', substr($this['route'],1));
@@ -51,7 +57,7 @@ $app->on('app.layout.contentbefore', function(){
     echo "<script>document.title = '$title'</script>";
     
 });
-
+ */
 // dashboard widget
 $app->on("admin.dashboard.widgets", function($widgets) {
     

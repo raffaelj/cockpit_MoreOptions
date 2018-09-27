@@ -11,8 +11,4 @@ work in progress, may completely change in the future - it's more a test addon, 
   * color picker for CD colors
   * a code editor field with all (hidden) collection options
 * dashboard widget with grouped collections
-* page titles
-  * simple, generated from reverse order of route
-  * `/collections/collection/name` --> `Name - Collection - Collections - AppName`
-  * `/singletons/form/name` --> `Name - Form - Singletons - AppName` and so on
-  * one fallback: `/collections/entry/name/5ba6a71733386213b40001e8` --> `Edit - Name - Entry - Collections - AppName`
+* <del>page titles</del> - now available in next branch
